@@ -45,7 +45,7 @@ public class Book
     // Method to display book into
     public void DisplayInfo()
     {
-        Console.WriteLine($"Title: {Title}, Author: {Author}, Year: {Year}");
+        Console.WriteLine($"Title: {Title}, Author: {Author}, Year: {Year}"); // You need to get clear on the need to use capitals and why 
     
     }
 
@@ -80,15 +80,24 @@ class Program
         //}
         // Find and display oldest book
         Book oldestBook = books[0];
+        Book newestBook = books[0];
         for (int i = 0; i < books.Length; i++)
         {
             if (books[i].Year < oldestBook.Year)
             { 
                 oldestBook = books[i];  
             }
+            if (books[i].Year > newestBook.Year)
+            { 
+                newestBook = books[i];
+            }
         }
         Console.WriteLine("\nThe oldest book in the collection is: ");
         oldestBook.DisplayInfo();
+        Console.WriteLine("\nThe newest book in the collection is: ");
+        newestBook.DisplayInfo();
+
+
     }
 
 
